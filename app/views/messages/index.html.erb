@@ -5,3 +5,12 @@
   메세지 : <input type="text" name="msg">
   <input type="submit">
 </form>
+<hr>
+
+<%@messages.each do |m|%>
+  보낸유저 : <%=m.user%><br>
+  보낸 ㅁㅔ시지 : <%=m.content%>  |
+  보낸 시간 : <%= time_ago_in_words(m.created_at).split(" ").to_s +"분 전" %><br>
+  보낸 시간 계산 <%= ((Time.now - m.created_at)/60).round.to_s+"분 전" %>
+  <br>
+<%end%>

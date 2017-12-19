@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <a href="/">홈으로</a>
+  <!-- unless 란 것도 있응께~~ 잘 활용허슈 -->
+  <%if current_user %>
+    <a href="/users/logout">로그아웃</a>
+    <%= current_user.email %>님 환영합니다
+  <%else%>
+    <a href="/users/signup">회원가입</a>
+    <a href="/users/login">로그인</a>
+  <%end%>
+  <!-- if 뒤에가 있을 때만 앞을 보일거야 -->
+  <!-- <p><%=User.find(session[:user_id]).email if session[:user_id] %>님 환영합니다</p> -->
+  <!-- view에서 찾아오는 로직을 구현해도되지만 helper를 쓰자 -->
 
 <%= yield %>
 

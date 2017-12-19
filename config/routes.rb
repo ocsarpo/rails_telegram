@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get 'messages/index'
   get 'messages/send_msg'
 
+  get 'users/signup'
+  get 'users/register'
+  get 'users/login'
+  get 'users/logout'
+  get 'users/login_session'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
